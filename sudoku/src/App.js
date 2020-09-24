@@ -1,12 +1,18 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
+import Board from './components/Board';
 import Header from './components/Header';
+import Options from './components/Options';
+import { Provider } from 'react-redux';
+import { store } from './redux/store.js';
 
-function App() {
+const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <Header />
-    </div>
+      <Board />
+      <Options />
+    </ Provider>
   );
 }
 

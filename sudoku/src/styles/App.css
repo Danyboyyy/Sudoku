@@ -1,0 +1,36 @@
+table {
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+td {
+  width: 20px;
+  text-align: center;
+  height: 20px;
+  border: solid;
+  border-radius: 3px;
+}
+
+.jumbotron {
+  padding: 1px 10px 1px 10px;
+  margin:0px auto;
+}
+
+.container {
+  text-align: center;
+}
+
+.options {
+  margin: auto;
+  width: fit-content;
+}
+
+.numbers {
+  display: inline-flex;
+  border: solid;
+  border-radius: 6px;
+  margin: 2px;
+  padding: 8px;
+  width: auto;
+}

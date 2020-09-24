@@ -7,11 +7,9 @@ class Header extends Component {
     return (
       <Jumbotron>
         <div className="container">
-          <div className="row row-header">
-            <div className="col-12 col-sm-6">
-              <h1>Sudoku</h1>
-              <p>Play a Sudoku game!</p>
-            </div>
+          <div>
+            <h1>Sudoku</h1>
+            <p>Play a Sudoku game!</p>
           </div>
         </div>
       </Jumbotron>
