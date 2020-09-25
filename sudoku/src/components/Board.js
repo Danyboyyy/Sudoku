@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useActions } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Box from './Box';
 
 const Board = () => {
@@ -12,6 +12,7 @@ const Board = () => {
         row={row}
         col={col}
         val={val}
+        isSelected={board.selected[row][col]}
       />
     );
   };
@@ -27,10 +28,10 @@ const Board = () => {
   return(
     <table>
       <tbody>
-        {board.map(showRow)}
+        {board.board.map(showRow)}
       </tbody>
     </table>
   );
-
 }
+
 export default Board;

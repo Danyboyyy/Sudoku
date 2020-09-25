@@ -8,4 +8,5 @@ export const palette = {
 	'7': '#80CBC4', 
 	'8': '#F48FB1', 
 	'9': '#81D4FA', 
+	'10': '#FFFFFF'
 };
