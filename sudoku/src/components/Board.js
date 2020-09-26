@@ -1,9 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { solveSudoku } from '../redux/ActionCreators';
 import Box from './Box';
 
 const Board = () => {
   const board = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const renderBox = (row, val, col) => {
     return (
@@ -12,7 +14,6 @@ const Board = () => {
         row={row}
         col={col}
         val={val}
-        isSelected={board.selected[row][col]}
       />
     );
   };
@@ -24,13 +25,18 @@ const Board = () => {
       </tr>
     );
   };
+  
+  const solve = () => dispatch(solveSudoku(board));
 
   return(
-    <table>
-      <tbody>
-        {board.board.map(showRow)}
-      </tbody>
-    </table>
+    <div>
+      <table>
+        <tbody>
+          {board.map(showRow)}
+        </tbody>
+      </table>
+      <button onClick={solve}>Solve!</button>
+    </div>
   );
 }
 

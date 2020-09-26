@@ -1,15 +1,26 @@
 table {
   margin: auto;
-  margin-top: 5px;
   margin-bottom: 10px;
+  background-color: #ffffff;
 }
 
 td {
-  width: 20px;
+  width: 30px;
+  height: 30px;			
+}	
+
+input {
+  height: 30px;
+  width: 30px;
+  border: none;				
   text-align: center;
-  height: 20px;
-  border: solid;
-  border-radius: 3px;
+}
+
+button {
+  display: flex;
+  margin: auto;
+  background-color: #e67f65;
+  border: 1px solid #e67f65;
 }
 
 .jumbotron {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { selectBox } from '../redux/ActionCreators';
+import { editBox } from '../redux/ActionCreators';
 import { palette } from '../styles/palette';
 
 const getBoxColor = (box) => {
@@ -32,14 +32,26 @@ const getBoxColor = (box) => {
 
 const Box = (props) => {
   const box = props;
+
   const dispatch = useDispatch();
-  const selBox = (b) => dispatch(selectBox(b));
+
+  const onChange = event => {
+    const { row, col } = props;
+		const range = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+		const val = parseInt(event.target.value);
+		const isDeleted = event.target.value === '';
+		if (range.indexOf(val) > -1 || isDeleted) {
+			dispatch(editBox(row, col, val));
+		}
+  }
 
   return(
-    <td onClick={selBox.bind(null, box)} style={{backgroundColor: getBoxColor(box)}}>
-      <div>
-        {box.val ? box.val : ''}
-      </div>
+    <td>
+      <input 
+        style={{backgroundColor: getBoxColor(box)}}
+        value={box.val ? box.val : ''}
+        onChange={onChange}
+      />
     </td>
   );
 }
