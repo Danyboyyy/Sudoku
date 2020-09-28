@@ -7,27 +7,12 @@ const getBoxColor = (box) => {
 
   let x = box.row - (box.row % 3); 
   let y = box.col - (box.col % 3);
-  
-	if(x === 0 && y === 0)
+  let z = x + y;
+
+  if(z === 3 || z === 9)
     return palette[1];
-  if(x === 0 && y === 3)
+  else
     return palette[2];
-  if(x === 0 && y === 6)
-    return palette[3];
-  if(x === 3 && y === 0)
-    return palette[4];
-  if(x === 3 && y === 3)
-    return palette[5];
-  if(x === 3 && y === 6)
-    return palette[6];
-  if(x === 6 && y === 0)
-    return palette[7];
-  if(x === 6 && y === 3)
-    return palette[8];
-  if(x === 6 && y === 6)
-    return palette[9];
-  if(box.isSelected === 1)
-    return palette[10];
 };
 
 const Box = (props) => {

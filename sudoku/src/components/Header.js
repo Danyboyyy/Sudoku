@@ -9,7 +9,7 @@ class Header extends Component {
         <div className="container">
           <div>
             <h1>Sudoku</h1>
-            <p>Build your Sudoku board and let me solve it</p>
+            <p>Build your sudoku board and let me solve it</p>
           </div>
         </div>
       </Jumbotron>
