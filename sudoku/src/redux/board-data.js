@@ -1,4 +1,5 @@
 import * as ActionTypes from './ActionTypes.js';
+import cloneDeep from 'lodash/cloneDeep';
 import { sudokuSolution } from '../solution/sudoku-solution';
 
 function boardData(state, action) {
@@ -16,9 +17,21 @@ function boardData(state, action) {
 				...state.slice(row + 1)
       ];
     case ActionTypes.SOLVE_SUDOKU:
-      console.log(action.board);
-      sudokuSolution(action.board);
-      return state;
+      let b = cloneDeep(action.board);
+      let ans = sudokuSolution(b);
+      return [...ans];
+    case ActionTypes.CLEAR_SUDOKU:
+      return [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ];
     default:
       return state;
   }

@@ -21,6 +21,7 @@ button {
   margin: auto;
   background-color: #e67f65;
   border: 1px solid #e67f65;
+  margin-bottom: 5px;
 }
 
 .jumbotron {

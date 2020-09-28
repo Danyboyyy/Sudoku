@@ -11,3 +11,7 @@ export const solveSudoku = (board) => ({
   type: ActionTypes.SOLVE_SUDOKU,
   board
 });
+
+export const clearSudoku = () => ({
+  type: ActionTypes.CLEAR_SUDOKU
+})
