@@ -9,5 +9,5 @@ export const editBox = (row, col, val) => ({
 
 export const solveSudoku = (board) => ({
   type: ActionTypes.SOLVE_SUDOKU,
-  board: board
+  board
 });

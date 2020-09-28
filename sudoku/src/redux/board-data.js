@@ -1,4 +1,5 @@
 import * as ActionTypes from './ActionTypes.js';
+import { sudokuSolution } from '../solution/sudoku-solution';
 
 function boardData(state, action) {
   switch(action.type) {
@@ -16,6 +17,7 @@ function boardData(state, action) {
       ];
     case ActionTypes.SOLVE_SUDOKU:
       console.log(action.board);
+      sudokuSolution(action.board);
       return state;
     default:
       return state;
