@@ -22,8 +22,8 @@ const Box = (props) => {
 
   const onChange = event => {
     const { row, col } = props;
-		const range = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-		const val = parseInt(event.target.value);
+    const range = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const val = + event.target.value;
 		const isDeleted = event.target.value === '';
 		if (range.indexOf(val) > -1 || isDeleted) {
 			dispatch(editBox(row, col, val));
