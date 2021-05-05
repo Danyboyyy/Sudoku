@@ -1,4 +1,4 @@
-#Sudoku Solver
+# Sudoku Solver
 
 Type in your sudoku board and let me solve it!
 
